@@ -72,7 +72,7 @@ void ArmaTools::VariableManager::EditVariable( const std::string variable, float
 	{
 		if ( current_variable.first.find( variable ) != std::string::npos )
 		{
-			WriteVirtualMemory<float>( value, current_variable.second.second );
+			WriteVirtualMemory<float>( value, current_variable.second.second + 0x18 );
 			return;
 		}
 	}
