@@ -38,11 +38,11 @@ namespace ArmaTools
 		}
 
 	private:
-		std::int16_t GetProcId( const std::wstring& proc_name );
-		std::intptr_t GetModuleBaseAddress( std::int16_t proc_id, const std::wstring& module_name );
-	    HANDLE GetProcHandle( const std::int16_t proc_id );
+		int32_t GetProcId( const std::wstring& proc_name );
+		std::intptr_t GetModuleBaseAddress( int32_t proc_id, const std::wstring& module_name );
+	    HANDLE GetProcHandle( const int32_t proc_id );
 
-		std::int16_t arma_proc_id;
+		int32_t arma_proc_id;
 		HANDLE arma_handle;
 	};
 }
