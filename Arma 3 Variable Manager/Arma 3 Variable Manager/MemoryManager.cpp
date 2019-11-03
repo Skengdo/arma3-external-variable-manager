@@ -7,7 +7,7 @@ ArmaTools::MemoryManager::MemoryManager( )
 	this->arma_handle = GetProcHandle( this->arma_proc_id );
 }
 
-std::int16_t ArmaTools::MemoryManager::GetProcId( const std::wstring& proc_name )
+int32_t ArmaTools::MemoryManager::GetProcId( const std::wstring& proc_name )
 {
 	PROCESSENTRY32 processInfo;
 	processInfo.dwSize = sizeof( processInfo );
@@ -38,7 +38,7 @@ std::int16_t ArmaTools::MemoryManager::GetProcId( const std::wstring& proc_name 
 	return 0;
 }
 
-std::intptr_t ArmaTools::MemoryManager::GetModuleBaseAddress( std::int16_t proc_id, const std::wstring& module_name )
+std::intptr_t ArmaTools::MemoryManager::GetModuleBaseAddress( int32_t proc_id, const std::wstring& module_name )
 {
 	std::intptr_t module_base_address;
 
@@ -63,7 +63,7 @@ std::intptr_t ArmaTools::MemoryManager::GetModuleBaseAddress( std::int16_t proc_
 	return module_base_address;
 }
 
-HANDLE ArmaTools::MemoryManager::GetProcHandle( std::int16_t proc_id )
+HANDLE ArmaTools::MemoryManager::GetProcHandle( int32_t proc_id )
 {
 	return OpenProcess( PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_VM_OPERATION, false, proc_id );
 }
