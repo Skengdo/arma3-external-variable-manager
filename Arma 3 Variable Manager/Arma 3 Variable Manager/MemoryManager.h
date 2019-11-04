@@ -13,7 +13,8 @@ namespace ArmaTools
 		MemoryManager( );
 
 		std::intptr_t arma_img_base;
-
+		
+                /* Simple ReadProcessMemory WinApi Wrapper */
 		template <class T>
 		auto ReadVirtualMemory( std::intptr_t address ) -> T {
 			T _buffer;
